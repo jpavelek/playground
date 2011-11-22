@@ -14,9 +14,10 @@ Item {
     Image {
         id: img2
         source: "bubble-2.png"
-        width: textText.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
+        property int neededWidth: textText.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
+        width: (neededWidth > 0) ? neededWidth : 0
         anchors {right: img3.left; top: img3.top }
-    }
+        }
     Image {
         id: img1
         source: "bubble-1.png"
@@ -64,8 +65,8 @@ Item {
         font.pixelSize: 10
         text: note
         elide: Text.ElideRight
-        width: parent.width - img9.width - UI.MARGIN_START
-        anchors {left: img1.left; leftMargin: UI.MARGIN_START; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
+        //width: parent.width - img9.width - UI.MARGIN_START
+        anchors {right: img9.left; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
     }
     Text {
         id: textText
