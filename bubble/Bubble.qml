@@ -67,10 +67,10 @@ Item {
     }
     Text {
         id: textNote
-        color: "white"
+        color: "black"
         smooth: true
-        font.pixelSize: 8
+        font.pixelSize: 10
         text: bubble.note
-        anchors {left: img1.left; leftMargin: w_left; top: img7.top; topMargin: 19 }
+        anchors {left: img1.left; leftMargin: w_left/2; top: img7.top; topMargin: 19 }
     }
 }
