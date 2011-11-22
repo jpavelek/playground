@@ -7,20 +7,20 @@ Item {
     height: img1.height + img4.height + img7.height
 
     Image {
-        id: img1
-        source: "bubble-1.png"
-        anchors {left: parent.left; top:parent.top }
+        id: img3
+        source: "bubble-3.png"
+        anchors {right: parent.right; top: parent.top }
     }
     Image {
         id: img2
         source: "bubble-2.png"
         width: textText.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
-        anchors {left: img1.right; top: img1.top }
+        anchors {right: img3.left; top: img3.top }
     }
     Image {
-        id: img3
-        source: "bubble-3.png"
-        anchors {left: img2.right; top: img1.top }
+        id: img1
+        source: "bubble-1.png"
+        anchors {right: img2.left; top:img3.top }
     }
     Image {
         id:img4
@@ -75,6 +75,6 @@ Item {
         text: message
         wrapMode: Text.WordWrap
         width: parent.width - UI.MARGIN_START - UI.MARGIN_END
-        anchors { left: parent.left; leftMargin: UI.MARGIN_START; top: parent.top; topMargin: UI.MARGIN_TOP; }
+        anchors { left: img1.left; leftMargin: UI.MARGIN_START; top: parent.top; topMargin: UI.MARGIN_TOP; }
     }
 }
