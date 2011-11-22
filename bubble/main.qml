@@ -23,12 +23,12 @@ PageStackWindow {
             }
             ListElement {
                 message: "ehh"
-                note: "Received | 10:09"
+                note: "Sent | 10:09"
                 received: false
             }
             ListElement {
                 message: "it should have been in the new mer release"
-                note: "Received | 10:09"
+                note: "Sent | 10:09"
                 received: false
             }
             ListElement {
@@ -38,47 +38,47 @@ PageStackWindow {
             }
             ListElement {
                 message: "Sage: No gprs on 950 with newer connman, wifi works."
-                note: "Received | "
+                note: "Received | 10:14"
                 received: true
             }
             ListElement {
                 message: "does phonecalls etc work?"
-                note: "Received | "
+                note: "Received | 10:14"
                 received: true
             }
             ListElement {
                 message: "pinquery works, will test phone/sms"
-                note: "Received | "
+                note: "Received | 10:14"
                 received: true
             }
             ListElement {
                 message: "Sage: you ported the connman patches?"
-                note: "Received | "
+                note: "Sent | 10:16"
                 received: false
             }
             ListElement {
                 message: "anybody got an idea on how to get signal strenght value which is sent to the UI and display it somewhere? terminal, or whatever"
-                note: "Received | "
+                note: "Received | 10:16"
                 received: true
             }
             ListElement {
                 message: "want to know if removing the backplate will make my n950 somehow similar to my N9/N8 as in signal strenght"
-                note: "Received | "
+                note: "Received | 10:16"
                 received: true
             }
             ListElement {
                 message: "i wonder if that's why our lockscreen doesn't always work on e.g. lenovo"
-                note: "Received | "
+                note: "Sent | 10:16"
                 received: false
             }
             ListElement {
                 message: "Sage: ofono is only working in Nemo right?"
-                note: "Received | "
+                note: "Received | 10:16"
                 received: true
             }
             ListElement {
                 message: "oh, one thing, w00t, have you already played with multiple views on opengl? with multiple shared contexts"
-                note: "Received | "
+                note: "Sent | 10:19"
                 received: false
             }
         }

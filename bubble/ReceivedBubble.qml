@@ -7,21 +7,21 @@ Item {
     height: childrenRect.height
 
     Image {
-        id: img3
-        source: "3r.png"
-        anchors {right: parent.right; rightMargin: UI.MARGIN_POST_END; top: parent.top }
+        id: img1
+        source: "1r.png"
+        anchors {left: parent.left; leftMargin: UI.MARGIN_PRE_START; top:parent.top }
     }
     Image {
         id: img2
         source: "2r.png"
-        property int neededWidth: textMessage.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END) - UI.MARGIN_PRE_START
+        property int neededWidth: textMessage.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
         width: (neededWidth > 0) ? neededWidth : 0
-        anchors {right: img3.left; top: img3.top }
+        anchors {left: img1.right; top: img1.top }
         }
     Image {
-        id: img1
-        source: "1r.png"
-        anchors {right: img2.left; top:img3.top }
+        id: img3
+        source: "3r.png"
+        anchors {left: img2.right; top: img1.top }
     }
     Image {
         id:img4
@@ -52,7 +52,6 @@ Item {
         source: "8r.png"
         anchors {left: img7.right; top: img4.bottom }
         width: img2.width
-        fillMode: Image.Tile
     }
     Image {
         id:img9
@@ -66,7 +65,7 @@ Item {
         font.pixelSize: noteFontSize
         text: note
         elide: Text.ElideRight
-        anchors {right: img9.left; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
+        anchors {left: img7.right; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
     }
     Text {
         id: textMessage

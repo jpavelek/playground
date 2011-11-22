@@ -4,6 +4,7 @@ import "BubbleUiConstants.js" as UI
 
 Item {
     id: sentBubble
+    width: parent.width
     height: childrenRect.height
 
     Image {
@@ -14,7 +15,7 @@ Item {
     Image {
         id: img2
         source: "2s.png"
-        property int neededWidth: textMessage.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END) - UI.MARGIN_PRE_START
+        property int neededWidth: textMessage.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
         width: (neededWidth > 0) ? neededWidth : 0
         anchors {right: img3.left; top: img3.top }
         }
@@ -52,7 +53,6 @@ Item {
         source: "8s.png"
         anchors {left: img7.right; top: img4.bottom }
         width: img2.width
-        fillMode: Image.Tile
     }
     Image {
         id:img9
