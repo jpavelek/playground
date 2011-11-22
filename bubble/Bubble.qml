@@ -4,9 +4,7 @@ import "BubbleUiConstants.js" as UI
 Item {
     id: bubble
     width: parent.width
-
-    property string text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique velit a massa cursus aliquam"
-    property string note: "Delivered | Tuesday 11:34"
+    height: img1.height + img4.height + img7.height
 
     Image {
         id: img1
@@ -16,7 +14,7 @@ Item {
     Image {
         id: img2
         source: "bubble-2.png"
-        width: parent.width - (UI.W_LEFT + UI.W_RIGHT)
+        width: textText.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
         anchors {left: img1.right; top: img1.top }
     }
     Image {
@@ -64,7 +62,7 @@ Item {
         color: "black"
         smooth: true
         font.pixelSize: 10
-        text: bubble.note
+        text: note
         elide: Text.ElideRight
         width: parent.width - img9.width - UI.MARGIN_START
         anchors {left: img1.left; leftMargin: UI.MARGIN_START; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
@@ -74,9 +72,9 @@ Item {
         color: "black"
         smooth: true
         font.pixelSize: 18
-        text: bubble.text
+        text: message
         wrapMode: Text.WordWrap
-        width: parent.width
-        anchors { left: parent.left; leftMargin: UI.MARGIN_START; top: parent.top; topMargin: UI.MARGIN_TOP; right: parent.right; rightMargin: UI.MARGIN_END }
+        width: parent.width - UI.MARGIN_START - UI.MARGIN_END
+        anchors { left: parent.left; leftMargin: UI.MARGIN_START; top: parent.top; topMargin: UI.MARGIN_TOP; }
     }
 }
