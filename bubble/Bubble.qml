@@ -6,6 +6,8 @@ Item {
     id: bubble
     width: parent.width
     height: childrenRect.height // img1.height + img4.height + img7.height
+    property int messageFontSize: UI.MESSAGE_FONT_SIZE
+    property int noteFontSize: UI.NOTE_FONT_SIZE
 
     Image {
         id: img3
@@ -15,7 +17,7 @@ Item {
     Image {
         id: img2
         source: "bubble-2.png"
-        property int neededWidth: textText.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END) - UI.MARGIN_PRE_START
+        property int neededWidth: textMessage.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END) - UI.MARGIN_PRE_START
         width: (neededWidth > 0) ? neededWidth : 0
         anchors {right: img3.left; top: img3.top }
         }
@@ -27,7 +29,7 @@ Item {
     Image {
         id:img4
         source: "bubble-4.png"
-        height: textText.height - (img1.height - UI.MARGIN_TOP) - (img7.height - UI.MARGIN_BOTTOM)
+        height: textMessage.height - (img1.height - UI.MARGIN_TOP) - (img7.height - UI.MARGIN_BOTTOM)
         anchors { left: img1.left; top: img1.bottom }
     }
     Image {
@@ -53,6 +55,7 @@ Item {
         source: "bubble-8.png"
         anchors {left: img7.right; top: img4.bottom }
         width: img2.width
+        fillMode: Image.Tile
     }
     Image {
         id:img9
@@ -63,16 +66,16 @@ Item {
         id: textNote
         color: "black"
         //smooth: true
-        font.pixelSize: 10
+        font.pixelSize: noteFontSize
         text: note
         elide: Text.ElideRight
         anchors {right: img9.left; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
     }
     Text {
-        id: textText
+        id: textMessage
         color: "black"
         //smooth: true
-        font.pixelSize: 28
+        font.pixelSize: messageFontSize
         text: message
         wrapMode: Text.WordWrap
         width: parent.width - UI.MARGIN_START - UI.MARGIN_END - UI.MARGIN_PRE_START - UI.MARGIN_POST_END
