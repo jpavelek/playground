@@ -7,12 +7,11 @@ Item {
     property int w_right: 45
     property int h_top: 20
     property int h_bottom: 36
+    width: parent.width
 
-    property string text: "100500!"
+
+    property string text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique velit a massa cursus aliquam"
     property string note: "delivered | Tuesday 11:34"
-
-    height: 66
-    width: 102
 
     Image {
         id: img1
@@ -33,7 +32,7 @@ Item {
     Image {
         id:img4
         source: "bubble-4.png"
-        height: parent.height - (h_top + h_bottom)
+        height: textText.height - 20 //FIXME - no magic numbers
         anchors { left: img1.left; top: img1.bottom }
     }
     Image {
@@ -71,6 +70,18 @@ Item {
         smooth: true
         font.pixelSize: 10
         text: bubble.note
+        elide: Text.ElideRight
+        width: parent.width - img9.width - w_left/2
         anchors {left: img1.left; leftMargin: w_left/2; top: img7.top; topMargin: 19 }
+    }
+    Text {
+        id: textText
+        color: "black"
+        smooth: true
+        font.pixelSize: 18
+        text: bubble.text
+        wrapMode: Text.WordWrap
+        width: parent.width
+        anchors { left: parent.left; leftMargin: 10; top: parent.top; topMargin: 10; right: parent.right; rightMargin: 10 }
     }
 }

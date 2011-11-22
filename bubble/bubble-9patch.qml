@@ -1,4 +1,4 @@
-import QtQuick 1.0
+import QtQuick 1.1
 
 
 Rectangle {
@@ -7,23 +7,23 @@ Rectangle {
     color: "#DDDDDD"
     Bubble {
         id: normal
-        width: 400
-        x: 10
         note: "Send | today at 12:50"
+        text: "ah, it might have to do with /etc/zypp/repos.d not having the latest mer release in the urls... grep merproject /etc/zypp/repos.d/*"
+        //anchors { top: parent.top; left: parent.left; right: parent.right}
+        y: 10
     }
+
     Bubble {
         id: small
-        width: 120
-        x: 10
-        y: 100
         note: "Sending failed!"
+        text: "otherwise you'll get stuck with software rendering, which will indeed be slower :)"
+        //anchors { top: normal.bottom; left: parent.left; right: parent.right }
+        y: 130
     }
     Bubble {
         id: tall
-        width: 230
-        height: 150
-        x: 10
-        y: 200
-
+        text: "Bullseye!"
+        //anchors { top: small.bottom; left: parent.left; right: parent.right }
+        y: 400
     }
 }
