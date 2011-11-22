@@ -1,17 +1,12 @@
 import QtQuick 1.0
+import "BubbleUiConstants.js" as UI
 
 Item {
     id: bubble
-    //Those are not properties, should go to constants
-    property int w_left: 20
-    property int w_right: 45
-    property int h_top: 20
-    property int h_bottom: 36
     width: parent.width
 
-
     property string text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique velit a massa cursus aliquam"
-    property string note: "delivered | Tuesday 11:34"
+    property string note: "Delivered | Tuesday 11:34"
 
     Image {
         id: img1
@@ -21,7 +16,7 @@ Item {
     Image {
         id: img2
         source: "bubble-2.png"
-        width: parent.width - (w_left + w_right)
+        width: parent.width - (UI.W_LEFT + UI.W_RIGHT)
         anchors {left: img1.right; top: img1.top }
     }
     Image {
@@ -32,7 +27,7 @@ Item {
     Image {
         id:img4
         source: "bubble-4.png"
-        height: textText.height - 20 //FIXME - no magic numbers
+        height: textText.height - (img1.height - UI.MARGIN_TOP) - (img7.height - UI.MARGIN_BOTTOM)
         anchors { left: img1.left; top: img1.bottom }
     }
     Image {
@@ -71,8 +66,8 @@ Item {
         font.pixelSize: 10
         text: bubble.note
         elide: Text.ElideRight
-        width: parent.width - img9.width - w_left/2
-        anchors {left: img1.left; leftMargin: w_left/2; top: img7.top; topMargin: 19 }
+        width: parent.width - img9.width - UI.MARGIN_START
+        anchors {left: img1.left; leftMargin: UI.MARGIN_START; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
     }
     Text {
         id: textText
@@ -82,6 +77,6 @@ Item {
         text: bubble.text
         wrapMode: Text.WordWrap
         width: parent.width
-        anchors { left: parent.left; leftMargin: 10; top: parent.top; topMargin: 10; right: parent.right; rightMargin: 10 }
+        anchors { left: parent.left; leftMargin: UI.MARGIN_START; top: parent.top; topMargin: UI.MARGIN_TOP; right: parent.right; rightMargin: UI.MARGIN_END }
     }
 }
