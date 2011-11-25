@@ -86,6 +86,11 @@ Rectangle {
                         symView2: row1[index][2]
                     }
                 }
+                FunctionKey {
+                    width: 100; height: keyHeight
+                    icon: "icon-m-input-methods-backspace.svg"
+                    onClickedPass: { MInputMethodQuick.sendCommit("\b"); }
+                }
 
             } //end Row1
 
@@ -150,9 +155,33 @@ Rectangle {
                 }
                 FunctionKey {
                     width: 100; height: keyHeight
-                    icon: "icon-m-input-methods-backspace.svg"
-                    onClickedPass: { MInputMethodQuick.sendCommit("\b"); }
+                    icon: inSymView ? ""
+                                    : (isShiftLocked) ? "icon-m-input-methods-capslock.svg"
+                                                      : (isShifted) ? "icon-m-input-methods-shift-uppercase.svg"
+                                                                    : "icon-m-input-methods-shift-lowercase.svg"
+
+                    caption: inSymView ? (inSymView2 ? "2/2" : "1/2")
+                                       : ""
+
+                    opacity: (mouseArea.containsMouse || (isShiftLocked && (!inSymView)))
+                           ? 0.6 : 1
+
+                    onClickedPass: {
+                        if (inSymView) {
+                            inSymView2 = !inSymView2
+                        } else {
+                            isShifted = (!isShifted)
+                            isShiftLocked = false
+                        }
+                    }
+                    onPressedAndHoldPass: {
+                        if (!inSymView) {
+                            isShifted = true
+                            isShiftLocked = true
+                        }
+                    }
                 }
+
             } //end Row3
 
             Row { //Row 4
@@ -171,8 +200,8 @@ Rectangle {
                 }
                 FunctionKey {
                     width: 150; height: keyHeight
-                    icon: MInputMethodQuick.actionKeyOverride.icon
-                    caption: MInputMethodQuick.actionKeyOverride.label
+                    icon: "icon-m-input-methods-enter.svg" //MInputMethodQuick.actionKeyOverride.icon
+                    caption: "" //MInputMethodQuick.actionKeyOverride.label
                     onReleased: {
                         MInputMethodQuick.activateActionKey()
                     }
