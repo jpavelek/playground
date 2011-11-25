@@ -31,6 +31,7 @@
 
 import Qt 4.7
 import "KeyboardUiConstants.js" as UI
+import "DevStub.js" as MInputMethodQuick  //REMOVE for deployment
 
 Rectangle {
     id: vkb
@@ -112,8 +113,6 @@ Rectangle {
 
                     caption: inSymView ? (inSymView2 ? "2/2" : "1/2") : ""
 
-                    // what is this really for?     opacity: (mouseArea.containsMouse || (isShiftLocked && (!inSymView))) ? 0.6 : 1
-
                     onClickedPass: {
                         if (inSymView) {
                             inSymView2 = !inSymView2
@@ -165,13 +164,13 @@ Rectangle {
                 }
                 FunctionKey {
                     width: 88; height: keyHeight
-                    icon: "icon-m-input-methods-enter.svg" //MInputMethodQuick.actionKeyOverride.icon
-                    caption: "" //MInputMethodQuick.actionKeyOverride.label
+                    icon: MInputMethodQuick.actionKeyOverride.icon
+                    caption: MInputMethodQuick.actionKeyOverride.label
                     onReleased: {
                         MInputMethodQuick.activateActionKey()
                     }
                 }
-            } //end Row4
-        }//end Column
+            }
+        }
     }
 }

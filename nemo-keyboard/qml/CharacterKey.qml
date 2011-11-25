@@ -31,6 +31,7 @@
 
 import Qt 4.7
 import "KeyboardUiConstants.js" as UI
+import "DevStub.js" as MInputMethodQuick  //REMOVE for deployment
 
 Item {
     id: aCharKey
@@ -74,11 +75,11 @@ Item {
 
         onPressed: {
             aCharKey.opacity = 0.6
-            //MInputMethodQuick.sendPreedit(key_label.text);
+            MInputMethodQuick.sendPreedit(key_label.text);
         }
 
         onReleased: {
-            //MInputMethodQuick.sendCommit(key_label.text)
+            MInputMethodQuick.sendCommit(key_label.text)
             isShifted = isShiftLocked ? isShifted : false
             aCharKey.opacity = 1
         }

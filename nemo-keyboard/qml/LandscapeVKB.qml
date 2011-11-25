@@ -171,8 +171,8 @@ Rectangle {
                 }
                 FunctionKey {
                     width: 150; height: keyHeight
-                    icon: "icon-m-input-methods-enter.svg" //MInputMethodQuick.actionKeyOverride.icon
-                    caption: "" //MInputMethodQuick.actionKeyOverride.label
+                    icon: MInputMethodQuick.actionKeyOverride.icon
+                    caption: MInputMethodQuick.actionKeyOverride.label
                     onReleased: {
                         MInputMethodQuick.activateActionKey()
                     }
