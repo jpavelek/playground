@@ -1,0 +1,7 @@
+Contact: Jakub Pavelek <jpavelek@live.com>
+
+This is a test rig for designing VKB layouts for Maliit. The code it forked of and completely based on the open source Maliit plugin codebase.
+
+Currently targetting Nemo keyboard with N9-ish looks.
+
+Run PortraitVKB.qml or LandscapeVKB.qml.
