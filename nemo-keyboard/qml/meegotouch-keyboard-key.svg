@@ -22,6 +22,21 @@
   <defs
      id="defs4">
     <linearGradient
+       id="linearGradient4655">
+      <stop
+         id="stop4657"
+         offset="0"
+         style="stop-color:#3b3b3b;stop-opacity:1;" />
+      <stop
+         style="stop-color:#1c1c1c;stop-opacity:1;"
+         offset="0.49999943"
+         id="stop4659" />
+      <stop
+         id="stop4661"
+         offset="1"
+         style="stop-color:#1c1c1c;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient3768">
       <stop
          style="stop-color:#3b3b3b;stop-opacity:1;"
@@ -94,6 +109,17 @@
        y1="796.39447"
        x2="806.42889"
        y2="857.73425" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4655"
+       id="radialGradient4653"
+       cx="848.88556"
+       cy="772.95514"
+       fx="848.88556"
+       fy="772.95514"
+       r="31.154406"
+       gradientTransform="matrix(-3.6099205,0,0,-1.9953453,3913.295,2315.2171)"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -103,8 +129,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="6.5071763"
-     inkscape:cx="-7.5578191"
-     inkscape:cy="14.179181"
+     inkscape:cx="-9.3867802"
+     inkscape:cy="44.914479"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -114,8 +140,8 @@
      fit-margin-bottom="0"
      inkscape:window-width="1705"
      inkscape:window-height="918"
-     inkscape:window-x="66"
-     inkscape:window-y="24"
+     inkscape:window-x="143"
+     inkscape:window-y="76"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -135,20 +161,19 @@
      id="layer1"
      transform="translate(-816.57141,-771.79077)">
     <g
-       id="g3147"
-       transform="translate(0.30735298,0.15367649)">
+       id="g4663">
       <path
          inkscape:connector-curvature="0"
          id="rect3766"
-         d="m 824.45575,771.90057 c -4.43916,0 -8.03125,3.56084 -8.03125,8 l 0,48.09375 c 0,4.43916 3.59209,8 8.03125,8 l 47.96875,0 c 4.43916,0 8,-3.56084 8,-8 l 0,-48.09375 c 0,-4.43916 -3.56084,-8 -8,-8 l -47.96875,0 z m 0.84375,1.15625 46.25,0 c 4.27922,0 7.71875,3.43953 7.71875,7.71875 l 0,46.34375 c 0,4.27922 -3.43953,7.71875 -7.71875,7.71875 l -46.25,0 c -4.27922,0 -7.71875,-3.43953 -7.71875,-7.71875 l 0,-46.34375 c 0,-4.27922 3.43953,-7.71875 7.71875,-7.71875 z"
+         d="m 824.7631,772.05425 c -4.43916,0 -8.03125,3.56084 -8.03125,8 l 0,48.09375 c 0,4.43916 3.59209,8 8.03125,8 l 47.96875,0 c 4.43916,0 8,-3.56084 8,-8 l 0,-48.09375 c 0,-4.43916 -3.56084,-8 -8,-8 l -47.96875,0 z m 0.84375,1.15625 46.25,0 c 4.27922,0 7.71875,3.43953 7.71875,7.71875 l 0,46.34375 c 0,4.27922 -3.43953,7.71875 -7.71875,7.71875 l -46.25,0 c -4.27922,0 -7.71875,-3.43953 -7.71875,-7.71875 l 0,-46.34375 c 0,-4.27922 3.43953,-7.71875 7.71875,-7.71875 z"
          style="fill:#c8c8c8;fill-opacity:0.58904114;stroke:none" />
       <rect
-         style="fill:url(#linearGradient3151);fill-opacity:1;stroke:none"
+         style="fill:url(#radialGradient4653);fill-opacity:1;stroke:none"
          id="rect3778"
          width="62.308811"
          height="62.409477"
-         x="817.27008"
-         y="772.74274"
+         x="817.57745"
+         y="772.89642"
          ry="7.8011847" />
     </g>
   </g>

@@ -31,6 +31,7 @@
 
 import Qt 4.7
 import "KeyboardUiConstants.js" as UI
+import "DevStub.js" as MInputMethodQuick  //REMOVE for deployment
 
 Rectangle {
     id: vkb
