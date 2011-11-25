@@ -40,21 +40,11 @@ Item {
     property int fontSize: UI.fontSize
     property string symView: ""
     property string symView2: ""
+    property string sizeType: "keyboard-key-43x60.png" // keyboard-key-56x60.png , keyboard-key-136x60.png
 
     Image {
-        id: leftBit
-        source: "meegotouch-keyboard-key-left.png"
-        anchors { left: parent.left; top: parent.top }
-    }
-    Image {
-        id: midBit
-        source: "meegotouch-keyboard-key-mid.png"
-        anchors { left: leftBit.right; top: parent.top; right: rightBit.left}
-    }
-    Image {
-        id: rightBit
-        source: "meegotouch-keyboard-key-right.png"
-        anchors { top: parent.top; right: parent.right }
+        id: keyImage
+        source: sizeType
     }
 
     Text {
