@@ -37,7 +37,7 @@ Item {
     id: aCharKey
     property string caption: ""
     property string captionShifted: ""
-    property int fontSize: UI.fontSize
+    property int fontSize: UI.FONT_SIZE
     property string symView: ""
     property string symView2: ""
     property string sizeType: "keyboard-key-43x60.png" // keyboard-key-56x60.png , keyboard-key-136x60.png
@@ -53,10 +53,16 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.family: "sans"
-        font.pixelSize: UI.fontSize
+        font.pixelSize: UI.FONT_SIZE
         font.bold: true
-        color: UI.fontColor
+        color: UI.TEXT_COLOR
         text: (inSymView && symView.length) > 0 ? (inSymView2 ? symView2 : symView) : (isShifted ? captionShifted : caption)
+    }
+
+    Popper {
+        id: popper
+        anchors { bottom: parent.top; horizontalCenter: parent.horizontalCenter }
+        text: key_label.text
     }
 
     MouseArea {
@@ -64,16 +70,21 @@ Item {
         anchors.fill: parent
 
         onPressed: {
-            aCharKey.opacity = 0.6
+            keyImage.opacity = 0.6
             MInputMethodQuick.sendPreedit(key_label.text);
+            popper.visible = true
         }
 
         onReleased: {
             MInputMethodQuick.sendCommit(key_label.text)
             isShifted = isShiftLocked ? isShifted : false
-            aCharKey.opacity = 1
+            keyImage.opacity = 1
+            popper.visible = false
         }
-        onCanceled: aCharKey.opacity = 1
+        onCanceled: {
+            popper.visible = false
+            keyImage.opacity = 1
+        }
     }
 }
 

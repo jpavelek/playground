@@ -48,11 +48,9 @@ Rectangle {
     property variant accents_row3: ["", "", "cç", "", "", "nñ", ""]
 
     property int columns: Math.max(row1.length, row2.length, row3.length)
-    property int keyWidth: (columns == 11) ? UI.portraitWidthNarrow
-                                           : UI.portraitWidth
+    property int keyWidth: (columns == 11) ? UI.portraitWidthNarrow : UI.portraitWidth
     property int keyHeight: UI.portraitHeight
-    property int keyMargin: (columns == 11) ? UI.portraitMarginNarrow
-                                            : UI.portraitMargin
+    property int keyMargin: (columns == 11) ? UI.portraitMarginNarrow : UI.portraitMargin
     property bool isShifted: false
     property bool isShiftLocked: false
     property bool inSymView: false
@@ -61,8 +59,13 @@ Rectangle {
     Flickable {
         id: flickable
         anchors.fill: parent
-        property int variationX: 100
+        //clip: true - kills popper!
         flickableDirection: Flickable.VerticalFlick
+        onFlickStarted: {
+            if ((contentY < 0) && (Math.abs(contentY) > UI.FLICK_CLOSE_DISTANCE)) {
+                MInputMethodQuick.userHide();
+            }
+        }
 
         Column { //Holder for the VKB rows
             anchors.fill: parent

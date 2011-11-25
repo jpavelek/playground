@@ -63,8 +63,7 @@ Rectangle {
         property int variationX: 100
         flickableDirection: Flickable.VerticalFlick
         onFlickStarted: {
-            Math.abs( contentX ) < variationX && contentY < 0 ? MInputMethodQuick.userHide() :
-                                                                false
+            Math.abs( contentX ) < variationX && contentY < 0 ? MInputMethodQuick.userHide() : false
         }
 
 

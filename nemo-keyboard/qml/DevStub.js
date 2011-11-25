@@ -14,6 +14,7 @@ function activateActionKey() {
 }
 
 function userHide() {
+    console.log("Hide VKB")
     return false
 }
 

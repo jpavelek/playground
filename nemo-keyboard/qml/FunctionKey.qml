@@ -79,9 +79,9 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.family: "sans"
-        font.pixelSize: UI.fontSize
+        font.pixelSize: UI.FONT_SIZE
         font.bold: true
-        color: UI.fontColor
+        color: UI.TEXT_COLOR
         text: caption
     }
 }
