@@ -41,10 +41,13 @@ Item {
     property string symView: ""
     property string symView2: ""
     property string sizeType: "keyboard-key-43x60.png" // keyboard-key-56x60.png , keyboard-key-136x60.png
+    property bool pressed: false
+
 
     Image {
         id: keyImage
         source: sizeType
+        opacity: (aCharKey.pressed) ? 0.5 : 1
     }
 
     Text {
@@ -63,6 +66,7 @@ Item {
         id: popper
         anchors { bottom: parent.top; horizontalCenter: parent.horizontalCenter }
         text: key_label.text
+        pressed: aCharKey.pressed
     }
 
     MouseArea {
@@ -70,20 +74,17 @@ Item {
         anchors.fill: parent
 
         onPressed: {
-            keyImage.opacity = 0.6
+            aCharKey.pressed = true
             MInputMethodQuick.sendPreedit(key_label.text);
-            popper.visible = true
         }
 
         onReleased: {
+            aCharKey.pressed = false
             MInputMethodQuick.sendCommit(key_label.text)
             isShifted = isShiftLocked ? isShifted : false
-            keyImage.opacity = 1
-            popper.visible = false
         }
         onCanceled: {
-            popper.visible = false
-            keyImage.opacity = 1
+            aCharKey.pressed = false
         }
     }
 }
