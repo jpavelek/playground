@@ -31,7 +31,6 @@
 
 import Qt 4.7
 import "KeyboardUiConstants.js" as UI
-import "DevStub.js" as MInputMethodQuick  //REMOVE for deployment
 
 Rectangle {
     id: vkb
@@ -102,11 +101,30 @@ Rectangle {
                         symView2: row2[index][2]
                     }
                 }
+                FunctionKey {
+                    width: 56; height: keyHeight
+                    icon: "icon-m-input-methods-backspace.svg"
+                    onClickedPass: { MInputMethodQuick.sendCommit("\b"); }
+                }
             } //end Row2
 
             Row { //Row 3
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: (columns == 11) ? 32 : 16
+
+                Row {
+                    spacing: keyMargin
+                    Repeater {
+                        model: row3
+                        CharacterKey {
+                            width: keyWidth; height: keyHeight
+                            caption: row3[index][0]
+                            captionShifted: row3[index][0].toUpperCase()
+                            symView: row3[index][1]
+                            symView2: row3[index][2]
+                        }
+                    }
+                }
                 FunctionKey {
                     width: 56; height: keyHeight
                     icon: inSymView ? ""
@@ -115,6 +133,8 @@ Rectangle {
                                                                     : "icon-m-input-methods-shift-lowercase.svg"
 
                     caption: inSymView ? (inSymView2 ? "2/2" : "1/2") : ""
+
+                    // what is this really for?     opacity: (mouseArea.containsMouse || (isShiftLocked && (!inSymView))) ? 0.6 : 1
 
                     onClickedPass: {
                         if (inSymView) {
@@ -131,24 +151,7 @@ Rectangle {
                         }
                     }
                 }
-                Row {
-                    spacing: keyMargin
-                    Repeater {
-                        model: row3
-                        CharacterKey {
-                            width: keyWidth; height: keyHeight
-                            caption: row3[index][0]
-                            captionShifted: row3[index][0].toUpperCase()
-                            symView: row3[index][1]
-                            symView2: row3[index][2]
-                        }
-                    }
-                }
-                FunctionKey {
-                    width: 56; height: keyHeight
-                    icon: "icon-m-input-methods-backspace.svg"
-                    onClickedPass: { MInputMethodQuick.sendCommit("\b"); }
-                }
+
             } //end Row3
 
             Row { //Row 4
@@ -167,13 +170,13 @@ Rectangle {
                 }
                 FunctionKey {
                     width: 88; height: keyHeight
-                    icon: MInputMethodQuick.actionKeyOverride.icon
-                    caption: MInputMethodQuick.actionKeyOverride.label
+                    icon: "icon-m-input-methods-enter.svg" //MInputMethodQuick.actionKeyOverride.icon
+                    caption: "" //MInputMethodQuick.actionKeyOverride.label
                     onReleased: {
                         MInputMethodQuick.activateActionKey()
                     }
                 }
-            }
-        }
+            } //end Row4
+        }//end Column
     }
 }
