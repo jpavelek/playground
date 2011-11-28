@@ -1,6 +1,6 @@
 import QtQuick 1.0
 import "KeyboardUiConstants.js" as UI
-import "DevStub.js" as MInputMethodQuick  //REMOVE for deployment
+import "DevStub.js" as MInputMethodQuick
 
 
 
