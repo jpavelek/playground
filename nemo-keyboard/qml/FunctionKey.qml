@@ -37,6 +37,9 @@ Item {
     property string icon: ""
     property string caption: ""
     property alias mouseArea: mouse_area
+    property int fontSize: UI.FONT_SIZE
+    property int sourceWidth: -1
+    property int sourceHeight: -1
     signal clickedPass()
     signal released()
     signal pressedAndHoldPass()
@@ -72,6 +75,8 @@ Item {
     Image {
         anchors.centerIn: parent
         source: icon
+        sourceSize.width: (sourceWidth == -1) ? width : sourceWidth
+        sourceSize.height: (sourceHeight == -1) ? height : sourceHeight
     }
 
     Text {
@@ -79,7 +84,7 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.family: "sans"
-        font.pixelSize: UI.FONT_SIZE
+        font.pixelSize: fontSize
         font.bold: true
         color: UI.TEXT_COLOR
         text: caption

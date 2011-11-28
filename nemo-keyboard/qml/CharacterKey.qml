@@ -40,7 +40,7 @@ Item {
     property int fontSize: UI.FONT_SIZE
     property string symView: ""
     property string symView2: ""
-    property string sizeType: "keyboard-key-43x60.png" // keyboard-key-56x60.png , keyboard-key-136x60.png
+    property string sizeType: "keyboard-key-43x60.png"
     property bool pressed: false
 
 
@@ -56,7 +56,7 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.family: "sans"
-        font.pixelSize: UI.FONT_SIZE
+        font.pixelSize: fontSize
         font.bold: true
         color: UI.TEXT_COLOR
         text: (inSymView && symView.length) > 0 ? (inSymView2 ? symView2 : symView) : (isShifted ? captionShifted : caption)
@@ -85,6 +85,7 @@ Item {
         }
         onCanceled: {
             aCharKey.pressed = false
+            //TODO - Should cancel the pre-edit modifications as well here
         }
     }
 }

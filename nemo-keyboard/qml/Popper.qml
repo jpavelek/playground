@@ -28,7 +28,7 @@ Image {
     }
     Timer {
         id: animatePopperFade
-        interval: 100
+        interval: 50
         running: false
         repeat: false
         onTriggered: popper.visible = false
