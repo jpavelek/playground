@@ -7,75 +7,32 @@ Item {
     width: parent.width
     height: childrenRect.height
 
-    Image {
-        id: img3
-        source: "3s.png"
-        anchors {right: parent.right; rightMargin: UI.MARGIN_POST_END; top: parent.top }
-    }
-    Image {
-        id: img2
-        source: "2s.png"
-        property int neededWidth: textMessage.paintedWidth - (img1.width - UI.MARGIN_START) - (img3.width - UI.MARGIN_END)
-        width: (neededWidth > 0) ? neededWidth : 0
-        anchors {right: img3.left; top: img3.top }
-        }
-    Image {
-        id: img1
-        source: "1s.png"
-        anchors {right: img2.left; top:img3.top }
-    }
-    Image {
-        id:img4
-        source: "4s.png"
-        height: textMessage.height - (img1.height - UI.MARGIN_TOP) - (img7.height - UI.MARGIN_BOTTOM)
-        anchors { left: img1.left; top: img1.bottom }
-    }
-    Image {
-        id:img5
-        source: "5s.png"
-        anchors {left:img4.right; top:img1.bottom}
-        width: img2.width
-        height: img4.height
-    }
-    Image {
-        id:img6
-        source: "6s.png"
-        height: img4.height
-        anchors {left: img5.right; top: img1.bottom }
-    }
-    Image {
-        id:img7
-        source: "7s.png"
-        anchors {left: img1.left; top: img4.bottom }
-    }
-    Image {
-        id:img8
-        source: "8s.png"
-        anchors {left: img7.right; top: img4.bottom }
-        width: img2.width
-    }
-    Image {
-        id:img9
-        source: "9s.png"
-        anchors {left: img8.right; top: img4.bottom }
+    BorderImage {
+        id: sentBubbleBimage
+        source: "bubble-sent.png"
+        width: textMessage.paintedWidth + UI.MARGIN_LEFT_TEXT + UI.MARGIN_RIGHT_TEXT
+        height: textMessage.paintedHeight + UI.MARGIN_TOP + UI.MARGIN_BOTTOM
+        border.left: 45; border.top: 20
+        border.right: 45; border.bottom: 36
+        anchors { right: parent.right; rightMargin: UI.MARGIN_RIGHT_BUBBLE; top: parent.top }
     }
     Label {
         id: textNote
-        color: "black"
+        color: UI.NOTE_FONT_COLOR
         //smooth: true
-        font.pixelSize: noteFontSize
+        font.pixelSize: UI.NOTE_FONT_SIZE
         text: note
         elide: Text.ElideRight
-        anchors {right: img9.left; top: img7.top; topMargin: UI.MARGIN_NOTE_TOP }
+        anchors {left: sentBubbleBimage.left; leftMargin: UI.MARGIN_LEFT_TEXT; bottom: sentBubbleBimage.bottom; bottomMargin: UI.MARGIN_NOTE_BOTTOM }
     }
     Text {
         id: textMessage
-        color: "black"
+        color: UI.MESSAGE_FONT_COLOR
         //smooth: true
-        font.pixelSize: messageFontSize
+        font.pixelSize: UI.MESSAGE_FONT_SIZE
         text: message
         wrapMode: Text.WordWrap
-        width: parent.width - UI.MARGIN_START - UI.MARGIN_END - UI.MARGIN_PRE_START - UI.MARGIN_POST_END
-        anchors { left: img1.left; leftMargin: UI.MARGIN_START; top: parent.top; topMargin: UI.MARGIN_TOP; }
+        width: parent.width - UI.MARGIN_LEFT_BUBBLE - UI.MARGIN_LEFT_TEXT - UI.MARGIN_RIGHT_TEXT
+        anchors { left: sentBubbleBimage.left; leftMargin: UI.MARGIN_LEFT_TEXT; top: parent.top; topMargin: UI.MARGIN_TOP; }
     }
 }
