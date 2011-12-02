@@ -31,7 +31,7 @@ Item {
         font.pixelSize: UI.MESSAGE_FONT_SIZE
         text: message
         wrapMode: Text.WordWrap
-        width: parent.width - UI.MARGIN_LEFT_BUBBLE - UI.MARGIN_LEFT_TEXT - UI.MARGIN_RIGHT_TEXT
+        width: parent.width - UI.MARGIN_LEFT_BUBBLE - UI.MARGIN_LEFT_TEXT - UI.MARGIN_RIGHT_TEXT - UI.MARGIN_RIGHT_BUBBLE
         anchors { left: parent.left; leftMargin: UI.MARGIN_LEFT_BUBBLE + UI.MARGIN_LEFT_TEXT; top: parent.top; topMargin: UI.MARGIN_TOP; }
     }
 }
