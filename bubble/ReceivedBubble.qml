@@ -12,7 +12,7 @@ Item {
         width: textMessage.paintedWidth + UI.MARGIN_LEFT_TEXT + UI.MARGIN_RIGHT_TEXT
         height: textMessage.paintedHeight + UI.MARGIN_TOP + UI.MARGIN_BOTTOM
         border.left: 45; border.top: 20
-        border.right: 20; border.bottom: 36
+        border.right: 19; border.bottom: 36
         anchors { left: parent.left; leftMargin: UI.MARGIN_LEFT_BUBBLE; top: parent.top }
     }
     Label {

@@ -12,7 +12,7 @@ Item {
         source: "bubble-sent.png"
         width: textMessage.paintedWidth + UI.MARGIN_LEFT_TEXT + UI.MARGIN_RIGHT_TEXT
         height: textMessage.paintedHeight + UI.MARGIN_TOP + UI.MARGIN_BOTTOM
-        border.left: 20; border.top: 20
+        border.left: 19; border.top: 20
         border.right: 45; border.bottom: 36
         anchors { right: parent.right; rightMargin: UI.MARGIN_RIGHT_BUBBLE; top: parent.top }
     }
