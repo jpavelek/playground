@@ -1,9 +1,7 @@
 /*
- * This file is part of Maliit Plugins
+ * This file is part of Maliit plugins
  *
- * Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
- *
- * Contact: Mohammad Anwari <Mohammad.Anwari@nokia.com>
+ * Copyright (C) Jakub Pavelek <jpavelek@live.com>
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -40,6 +38,24 @@ Rectangle {
     width: UI.PORTRAIT_WIDTH
     height: UI.PORTRAIT_HEIGHT
 
+    property string currentLayoutName: "Whatever"
+    property int index : 1;
+    function nextLayout() {
+        //FIXME this is superugly
+        if (index == 2)
+        {
+            eng.visible = true;
+            rus.visible = false;
+            currentLayoutName = eng.layoutName;
+            index = 1;
+        } else if (index == 1) {
+            eng.visible = false;
+            rus.visible = true;
+            currentLayoutName = rus.layoutName;
+            index++;
+        }
+    }
+
     Flickable {
         id: flickable
         anchors.fill: parent
@@ -50,12 +66,33 @@ Rectangle {
                 if (contentY < 0) {
                     MInputMethodQuick.userHide();
                 } else {
-                    console.log("SWITCH")
-                }
+                    nextLayout();
+                    layoutLabel.visible = true;
+                    timerLabelShow.start();
+                 }
             }
         }
-        //TODO - loader here?
-        RussianPortrait {}
-        //EnglishPortrait {}
+
+        //TODO - move this all to manager
+        RussianPortrait { id: rus; visible: false; }
+        EnglishPortrait { id: eng; visible: true; }
+
+    }
+
+    Text {
+        id: layoutLabel
+        text: currentLayoutName
+        font.pixelSize: 72
+        color: UI.TEXT_COLOR
+        visible: false
+        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
+    }
+
+    Timer {
+        id: timerLabelShow
+        interval: 750
+        running: false
+        repeat: false
+        onTriggered: layoutLabel.visible = false
     }
 }

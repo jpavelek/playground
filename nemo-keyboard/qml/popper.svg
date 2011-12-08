@@ -38,7 +38,19 @@
        x2="39.975647"
        y2="1051.9104"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.1374801,0.14556717)" />
+       gradientTransform="matrix(0.86459555,0,0,0.91910903,6.2113998,79.632554)" />
+    <filter
+       inkscape:collect="always"
+       id="filter4055"
+       x="-0.15567457"
+       width="1.3113491"
+       y="-0.097627554"
+       height="1.1952551">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.4865183"
+         id="feGaussianBlur4057" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -48,7 +60,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.1083333"
-     inkscape:cx="40"
+     inkscape:cx="15.240328"
      inkscape:cy="60"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -66,7 +78,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -76,13 +88,25 @@
      id="layer1"
      transform="translate(0,-932.36215)">
     <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/jakub/Projects/playground/nemo-keyboard/qml/popper.png"
+       ry="6.7592907"
+       y="935.87128"
+       x="5.3433757"
+       height="110.29308"
+       width="69.167648"
+       id="rect4045"
+       style="color:#000000;fill:#000000;fill-opacity:0.52511417;fill-rule:nonzero;stroke:none;stroke-width:0.9646073;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter4055);enable-background:accumulate"
+       transform="matrix(1,0,0,-1,0.28135991,1985.2712)" />
+    <rect
        style="color:#000000;fill:url(#linearGradient6221);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.9646073;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5705"
-       width="80"
-       height="120"
-       x="-0.002462721"
-       y="932.35425"
-       ry="7.3541775"
+       width="69.167648"
+       height="110.29308"
+       x="6.3281355"
+       y="936.43402"
+       ry="6.7592907"
        inkscape:export-filename="/home/jakub/Projects/playground/nemo-keyboard/qml/popper.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />

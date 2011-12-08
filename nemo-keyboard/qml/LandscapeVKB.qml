@@ -80,6 +80,7 @@ Rectangle {
                     model: row1
                     CharacterKey {
                         width: keyWidth; height: keyHeight
+                        sizeType: "keyboard-key-72x46.png"
                         caption: row1[index][0]
                         captionShifted: row1[index][0].toUpperCase()
                         symView: row1[index][1]
@@ -96,6 +97,7 @@ Rectangle {
                     model: row2
                     CharacterKey {
                         width: keyWidth; height: keyHeight
+                        sizeType: "keyboard-key-72x46.png"
                         caption: row2[index][0]
                         captionShifted: row2[index][0].toUpperCase()
                         symView: row2[index][1]
@@ -106,9 +108,10 @@ Rectangle {
 
             Row { //Row 3
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: (columns == 11) ? 54 : 26
+                spacing: (columns == 11) ? 6 : 8
                 FunctionKey {
-                    width: 100; height: keyHeight
+                    width: 110; height: keyHeight
+                    landscape: true
                     icon: inSymView ? ""
                                     : (isShiftLocked) ? "icon-m-input-methods-capslock.svg"
                                                       : (isShifted) ? "icon-m-input-methods-shift-uppercase.svg"
@@ -141,6 +144,7 @@ Rectangle {
                         model: row3
                         CharacterKey {
                             width: keyWidth; height: keyHeight
+                            sizeType: "keyboard-key-72x46.png"
                             caption: row3[index][0]
                             captionShifted: row3[index][0].toUpperCase()
                             symView: row3[index][1]
@@ -149,7 +153,8 @@ Rectangle {
                     }
                 }
                 FunctionKey {
-                    width: 100; height: keyHeight
+                    width: 110; height: keyHeight
+                    landscape: true
                     icon: "icon-m-input-methods-backspace.svg"
                     onClickedPass: { MInputMethodQuick.sendCommit("\b"); }
                 }
@@ -157,20 +162,22 @@ Rectangle {
 
             Row { //Row 4
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: (columns == 11) ? 32 : 26
+                spacing: (columns == 11) ? 6 : 8
                 FunctionKey {
-                    width: 150; height: keyHeight
+                    width: 145; height: keyHeight
+                    landscape: true
                     caption: "?123"
                     onClickedPass: { inSymView = (!inSymView) }
                 }
                 Row {
                     spacing: keyMargin
-                    CharacterKey { caption: ","; captionShifted: ","; width: 120; height: keyHeight }
-                    CharacterKey { caption: " "; width: 228; height: keyHeight }
-                    CharacterKey { caption: "."; captionShifted: "."; width: 120; height: keyHeight }
+                    CharacterKey { caption: ","; captionShifted: ","; width: 120; height: keyHeight; sizeType: "keyboard-key-120x46.png" }
+                    CharacterKey { caption: " "; width: 228; height: keyHeight; sizeType: "keyboard-key-228x46.png"  }
+                    CharacterKey { caption: "."; captionShifted: "."; width: 120; height: keyHeight; sizeType: "keyboard-key-120x46.png"  }
                 }
                 FunctionKey {
-                    width: 150; height: keyHeight
+                    width: 145; height: keyHeight
+                    landscape: true
                     icon: MInputMethodQuick.actionKeyOverride.icon
                     caption: MInputMethodQuick.actionKeyOverride.label
                     onReleased: {

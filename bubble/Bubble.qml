@@ -15,7 +15,7 @@ Item {
         source: (received) ? "bubble-received.png" : "bubble-sent.png"
         width: textMessage.paintedWidth + UI.MARGIN_LEFT_TEXT + UI.MARGIN_RIGHT_TEXT
         height: textMessage.paintedHeight + UI.MARGIN_TOP + UI.MARGIN_BOTTOM
-        border.left: (received) ? 45 : 19;
+        border.left:  (received) ? 45 : 19;
         border.top: 19
         border.right: (received) ? 19 : 45;
         border.bottom: 36

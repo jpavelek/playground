@@ -1,9 +1,9 @@
 /*
- * This file is part of Maliit Plugins
+ * This file is part of Maliit plugins
  *
  * Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
  *
- * Contact: Mohammad Anwari <Mohammad.Anwari@nokia.com>
+ * Contact: Jakub Pavelek <jpavelek@live.com>
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -40,6 +40,7 @@ Item {
     property int fontSize: UI.FONT_SIZE
     property int sourceWidth: -1
     property int sourceHeight: -1
+    property bool landscape: false
     signal clickedPass()
     signal released()
     signal pressedAndHoldPass()
@@ -47,17 +48,17 @@ Item {
 
     Image {
         id: leftBit
-        source: "meegotouch-keyboard-function-key-left.png"
+        source: (landscape) ? "meegotouch-keyboard-function-key-left-landscape.png" : "meegotouch-keyboard-function-key-left.png"
         anchors { left: parent.left; top: parent.top }
     }
     Image {
         id: midBit
-        source: "meegotouch-keyboard-function-key-mid.png"
+        source: (landscape) ?  "meegotouch-keyboard-function-key-mid-landscape.png" :  "meegotouch-keyboard-function-key-mid.png"
         anchors { left: leftBit.right; top: parent.top; right: rightBit.left}
     }
     Image {
         id: rightBit
-        source: "meegotouch-keyboard-function-key-right.png"
+        source: (landscape) ?  "meegotouch-keyboard-function-key-right-landscape.png" : "meegotouch-keyboard-function-key-right.png"
         anchors { top: parent.top; right: parent.right }
     }
 
