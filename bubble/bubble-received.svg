@@ -614,12 +614,8 @@
          style="stop-color:#000000;stop-opacity:0.05384615;" />
       <stop
          style="stop-color:#000000;stop-opacity:0.67058825;"
-         offset="0.95622814"
-         id="stop8266" />
-      <stop
-         id="stop8264"
          offset="1"
-         style="stop-color:#000000;stop-opacity:0.05384615;" />
+         id="stop8266" />
     </linearGradient>
     <linearGradient
        y2="109.02172"
@@ -710,14 +706,14 @@
        y2="109.02172" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient10207"
+       xlink:href="#linearGradient8260"
        id="linearGradient4186"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(-1,0,0,1,11.851495,1001.3622)"
-       x1="4.444273"
-       y1="34.476418"
-       x2="55.724346"
-       y2="65.244461" />
+       x1="58.568005"
+       y1="70.787819"
+       x2="38.942127"
+       y2="51.895947" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient8260"
@@ -765,8 +761,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.870336"
-     inkscape:cx="50.579356"
-     inkscape:cy="32.959221"
+     inkscape:cx="51.093749"
+     inkscape:cy="32.959242"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -787,7 +783,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -798,17 +794,17 @@
      transform="translate(45.168002,-1001.258)">
     <path
        style="fill:url(#linearGradient4186);fill-opacity:1;stroke:none"
-       d="m -28.374873,1047.9179 -16.067756,17.7771 1.709335,1.4814 49.1149146,-16.6375 z"
+       d="m -31.310414,1051.3826 -13.132215,14.3124 1.709335,1.4814 43.51540694,-14.7742 -14.66519894,-0.019 -15.232198,-0.4239 c -0.523388,-0.1036 -1.414213,-0.3453 -2.183949,-0.5936 z"
        id="path10189"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
+       sodipodi:nodetypes="cccccccc"
        inkscape:export-filename="/home/jakub/Projects/playground/bubble/bubble-received.png"
        inkscape:export-xdpi="89.496986"
        inkscape:export-ydpi="89.496986" />
     <path
        id="path8300"
        d="m 36.613247,1002.258 c 10.623548,0 19.1875,8.5639 19.1875,19.1875 l 0,9.7812 c 0,10.6235 -8.563952,19.1563 -19.1875,19.1563 l -30.6874995,0 0,-48.125 30.6874995,0 z"
-       style="fill:#6699ff;fill-opacity:1;stroke:none"
+       style="fill:#7bb545;fill-opacity:1;stroke:none"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/jakub/Projects/playground/bubble/bubble-received.png"
        inkscape:export-xdpi="89.496986"
@@ -831,7 +827,7 @@
        inkscape:export-ydpi="89.496986" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:#6699ff;fill-opacity:1;stroke:none"
+       style="fill:#7bb545;fill-opacity:1;stroke:none"
        d="m 5.913995,1002.2685 0,48.125 -5.875,0 -43,15.3125 15.59375,-15.5 c -9.387995,-1.2575 -16.59375,-9.2265 -16.59375,-18.9688 l 0,-9.7812 c 0,-10.6236 8.563953,-19.1875 19.1875,-19.1875 l 30.6875,0 z"
        id="path9663"
        inkscape:export-filename="/home/jakub/Projects/playground/bubble/bubble-received.png"
